@@ -1,5 +1,5 @@
 {
-  "name": "imago.js",
+  "name": "imago",
   "version": "1.0.0",
   "description": "imago API wrapper",
   "main": "dist/imago.min.js",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/Imago-io/imago.js#readme",
   "devDependencies": {
+    "@types/core-js": "^0.9.34",
     "@types/superagent": "^2.0.36",
     "superagent": "^3.1.0",
     "ts-loader": "^1.2.2",
