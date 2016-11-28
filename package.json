@@ -1,0 +1,22 @@
+{
+  "name": "imago.js",
+  "version": "1.0.0",
+  "description": "imago API wrapper",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Imago-io/imago.js.git"
+  },
+  "keywords": [
+    "imago"
+  ],
+  "author": "Sebastian Moreno <sebastiann.moreno@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Imago-io/imago.js/issues"
+  },
+  "homepage": "https://github.com/Imago-io/imago.js#readme"
+}
