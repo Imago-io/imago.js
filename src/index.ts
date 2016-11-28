@@ -1,6 +1,6 @@
 'use strict';
 
-import { Assets } from './assets';
+import Assets from './assets';
 
 export default class Imago {
 
@@ -16,7 +16,7 @@ export default class Imago {
     client: this._API_CLIENT
   };
 
-  assets: any;
+  assets: Assets;
 
   constructor(key = '') {
     if (key) {

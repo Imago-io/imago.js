@@ -2,9 +2,11 @@
 
 import * as http from 'superagent';
 
-export class Utils {
+export default class Utils {
 
-  makeRequest(api: any, request: any) {
+  constructor() {}
+
+  makeRequest(api: any, request: any): void {
 
     let headers: any = {};
     if (api.key) {

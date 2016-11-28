@@ -1,10 +1,8 @@
 'use strict';
 
-import { Utils } from './utils';
+import Utils from './utils';
 
-export class Assets {
-
-  utils: any = Utils;
+export default class Assets {
 
   constructor(public api: any) {}
 
@@ -14,7 +12,7 @@ export class Assets {
       type: 'POST',
       data: query
     };
-    return this.utils.makeRequest(this.api, request);
+    return Utils.makeRequest(this.api, request);
   }
 
   get(id: string) {
@@ -22,7 +20,8 @@ export class Assets {
       path: `/assets/${id}`,
       type: 'GET'
     };
-    return this.utils.makeRequest(this.api, request);
+    console.log('this.utils.makeRequest', Utils.makeRequest);
+    return Utils.makeRequest(this.api, request);
   }
 
   update(asset: any) {

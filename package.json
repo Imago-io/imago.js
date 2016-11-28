@@ -13,6 +13,7 @@
   "keywords": [
     "imago"
   ],
+  "typings": "typings/index",
   "author": "Sebastian Moreno <sebastiann.moreno@gmail.com>",
   "license": "ISC",
   "bugs": {
