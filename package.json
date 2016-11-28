@@ -2,9 +2,9 @@
   "name": "imago.js",
   "version": "1.0.0",
   "description": "imago API wrapper",
-  "main": "index.js",
+  "main": "dist/imago.min.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepublish": "webpack --debug; webpack -p"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,14 @@
   "bugs": {
     "url": "https://github.com/Imago-io/imago.js/issues"
   },
-  "homepage": "https://github.com/Imago-io/imago.js#readme"
+  "homepage": "https://github.com/Imago-io/imago.js#readme",
+  "devDependencies": {
+    "@types/superagent": "^2.0.36",
+    "superagent": "^3.1.0",
+    "ts-loader": "^1.2.2",
+    "tslint": "^4.0.2",
+    "tslint-loader": "^3.2.0",
+    "typescript": "^2.0.10",
+    "webpack": "^1.13.3"
+  }
 }
