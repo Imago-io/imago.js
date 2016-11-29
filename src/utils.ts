@@ -2,20 +2,16 @@
 
 import * as http from 'superagent';
 
-export default class Utils {
+export namespace Utils {
 
-  constructor() {}
-
-  makeRequest(api: any, request: any): void {
+  export function makeRequest(api: any, request: any): any {
 
     let headers: any = {};
     if (api.key) {
-      headers.Authorization = `Basic ${api.key}`;
+      headers.Authorization = `Basic ${api.key}:`;
     }
 
-    let path = `${api.host}${api.path}${request.path}`;
-    let query = http(request.type, path);
-    console.log('query', query);
+    let query = http(request.type, `${api.host}${api.path}${request.path}`);
 
     if (Object.keys(headers).length) {
       query.set(headers);
@@ -25,9 +21,9 @@ export default class Utils {
       query.send(request.data);
     }
 
-    console.log('query 2', query);
-
-
+    return query.then((response) => {
+      return response.body;
+    });
   }
 
 }

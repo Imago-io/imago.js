@@ -1,17 +1,21 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "declaration": true,
-    "declarationDir": "../typings",
-    "outDir": "dist",
     "module": "commonjs",
+    "declaration": true,
+    "declarationDir": "../dist",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "noImplicitAny": true,
     "preserveConstEnums": true,
     "removeComments": false,
     "sourceMap": true,
-    "target": "es5"
+    "target": "es5",
+    "rootDir": "./src",
+    "outDir": "./dist"
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "dist"
   ]
 }
