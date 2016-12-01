@@ -6,6 +6,7 @@
     "declarationDir": "../dist",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "suppressImplicitAnyIndexErrors": true,
     "noImplicitAny": true,
     "preserveConstEnums": true,
     "removeComments": false,

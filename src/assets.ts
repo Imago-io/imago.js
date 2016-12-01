@@ -1,14 +1,26 @@
 'use strict';
 
-import { Utils } from './utils';
+import Utils from './utils';
+import { Asset } from './assets.d';
 
 export default class Assets {
 
   constructor(public api: any) {}
 
   search(query: any): Promise<any> {
+
+    if (typeof query === 'string') {
+      query = [
+        {path: query}
+      ];
+    }
+
+    query = Utils.toArray(query);
+
+    query = query.map(Utils.formatQuery);
+
     let request = {
-      path: `/assets`,
+      path: `/search`,
       type: 'POST',
       data: query
     };
@@ -23,15 +35,15 @@ export default class Assets {
     return Utils.makeRequest(this.api, request);
   }
 
-  create(asset: any){
+  create(asset: Asset) {
 
   }
 
-  update(asset: any) {
+  update(asset: Asset) {
 
   }
 
-  del(asset: any) {
+  del(asset: string) {
 
   }
 
