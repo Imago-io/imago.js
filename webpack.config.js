@@ -7,7 +7,6 @@ var libraryName = 'imago',
     outputFile;
 
 if (yargs.argv.p) {
-  plugins.push(new webpack.optimize.UglifyJsPlugin({ minimize: true }));
   outputFile = libraryName + '.min.js';
 } else {
   outputFile = libraryName + '.js';
@@ -24,24 +23,27 @@ var config = {
     umdNamedDefine: true
   },
   module: {
-    preLoaders: [
-      { test: /\.ts?$/, loader: 'tslint', exclude: /node_modules/ }
-    ],
-    loaders: [
-      { test: /\.ts?$/, loader: 'ts', exclude: /node_modules/ }
+    rules: [
+      {
+        enforce: 'pre',
+        test: /\.ts?$/,
+        loader: 'tslint-loader',
+        exclude: /node_modules/,
+      },
+      { test: /\.ts?$/, loader: 'ts-loader', exclude: /node_modules/ }
     ]
   },
   resolve: {
-    root: path.resolve('./src'),
-    extensions: [ '', '.js', '.ts']
+    modules: ['node_modules', './src'],
+    extensions: ['.js', '.ts']
   },
-  plugins: plugins,
+  plugins,
 
   // Individual Plugin Options
-  tslint: {
-    emitErrors: true,
-    failOnHint: true
-  }
+  // tslint: {
+  //   emitErrors: true,
+  //   failOnHint: true
+  // }
 };
 
 module.exports = config;

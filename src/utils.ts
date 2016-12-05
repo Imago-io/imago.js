@@ -1,7 +1,7 @@
 'use strict';
 
 import * as http from 'superagent';
-import { isPlainObject } from 'lodash';
+import isPlainObject from 'lodash-es/isPlainObject';
 
 export default class Utils {
 
